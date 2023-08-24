@@ -30,5 +30,3 @@ try {
     para tratamento de exceções (erros) */
     die("Deu ruim paseru!: ".$erro->getMessage());
 }
-
- 
