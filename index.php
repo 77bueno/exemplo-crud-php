@@ -13,7 +13,7 @@
     <hr>
     <h2>Escolha o que deseja gerenciar:</h2>
     <ul>
-        <li><a href="">Fabricantes</a></li>
+        <li><a href="/fabricantes/visualizar.php">Fabricantes</a></li>
         <li><a href="">Produtos</a></li>
     </ul>
 </body>
