@@ -57,7 +57,7 @@ $quantidade = count($listaDeFabricantes);
     <p><a href="inserir.php">Inserir novo fabricante</a></p>
 
     <table  class="styled-table">
-        <caption>Lista de Fabricantes</caption>
+        <caption>Lista de Fabricantes <b><?=$quantidade?></b> </caption>
         <thead>
             <tr>
                 <th>ID</th>
