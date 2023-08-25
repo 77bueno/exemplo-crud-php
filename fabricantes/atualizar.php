@@ -9,6 +9,12 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 /* Chamando a função e recuperando os dados de um fabricante
     de acordo com o id passado */
 $fabricante = lerUmFabricante($conexao, $id);
+
+if (isset($_POST['atualizar'])) {
+    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+    atualizarFabricante($conexao, $nome, $id);
+    header("location:visualizar.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -61,6 +67,9 @@ $fabricante = lerUmFabricante($conexao, $id);
     <h1>Fabricantes | SELECT/UPDATE</h1>
     <hr>
     <form action="" method="post">
+        <!-- Campo oculto usado apenas para registro no furmulário do id
+        do fabricante que está sendo visualizado. -->
+        <input type="hidden" name="id" value="<?=$fabricante['id']?>">
         <p>
             <label for="nome">Nome:</label>
             <input required value="<?=$fabricante['nome']?>" type="text" name="nome" id="nome">
