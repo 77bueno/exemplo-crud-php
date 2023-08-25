@@ -4,6 +4,9 @@ require_once "../src/funcoes-fabricantes.php";
 
 /* Guardando o retorno/resultado da função lerFabricantes */
 $listaDeFabricantes = lerFabricantes($conexao);
+
+// Contando quantos fabricantes temos na matriz $listaDeFabricantes 
+$quantidade = count($listaDeFabricantes);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
