@@ -10,7 +10,12 @@ if(isset($_POST['inserir']) ){
     // Pode ser assim também:
     // $nome = filter_var($_POST['nome'], FILTER_SANITIZE_SPECIAL_CHARS); 
 
-    inserirFabricante($conexao, $nome)
+    /* Chamar a função, passar os dados de conexão e o 
+    dado (nome do fbricante) digitado no formulário. */ 
+    inserirFabricante($conexao, $nome);
+
+    // Redirecionamento
+    header("location:visualizar.php");
 }
 ?>
 <!DOCTYPE html>
