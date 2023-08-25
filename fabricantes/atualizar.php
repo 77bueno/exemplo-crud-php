@@ -1,9 +1,14 @@
 <?php 
+// Importando as funções de fabicantes
+require_once "../src/funcoes-fabricantes.php";
+
 /* Obtendo e sanitizando o valor vindo do parâmetro de URL
 (link dinâmico) */
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-echo $id;
 
+/* Chamando a função e recuperando os dados de um fabricante
+    de acordo com o id passado */
+$fabricante = lerUmFabricante($conexao, $id);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -58,7 +63,7 @@ echo $id;
     <form action="" method="post">
         <p>
             <label for="nome">Nome:</label>
-            <input required type="text" name="nome" id="nome">
+            <input required value="<?=$fabricante['nome']?>" type="text" name="nome" id="nome">
         </p>
         <button type="submit" name="atualizar">Atualizar fabricante</button>
     </form>
