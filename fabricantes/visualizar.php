@@ -43,7 +43,8 @@ $quantidade = count($listaDeFabricantes);
             padding: 6px; /* Reduzindo o preenchimento */
             font-size: 16px; /* Reduzindo o tamanho da fonte */
             text-align: left;
-            background-color: white;
+            background-color: #0056b3;
+            color: white;
             border-bottom: 1px solid #ddd;
         }
 
@@ -95,12 +96,14 @@ $quantidade = count($listaDeFabricantes);
             <tr>
                 <td><?=$fabricante['id']?></td>
                 <td><?=$fabricante['nome']?></td>
-                <td><a href="atualizar.php?id=<?=$fabricante['id']?>">Editar</a> <a href="excluir.php?id=<?=$fabricante['id']?>">Excluir</a></td>
+                <td><a href="atualizar.php?id=<?=$fabricante['id']?>">Editar</a> <a class="excluir" href="excluir.php?id=<?=$fabricante['id']?>">Excluir</a></td>
             </tr>
         </tbody>
 <?php
 }
 ?>
     </table>
+ 
+    <script src="../js/confirma-exclusao.js"></script>
 </body>
 </html>
