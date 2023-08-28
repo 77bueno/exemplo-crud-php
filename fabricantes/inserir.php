@@ -25,11 +25,23 @@ if(isset($_POST['inserir']) ){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabricantes - Inserção</title>
     <style>
+      body {
+          background-color: #b3d9ff;
+        }
+
+        h1 {
+          padding: 10px 20px;
+          background-color: #0056b3;
+          width: 305px;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+        }
         /* Estilos gerais para o formulário */
         form {
           width: 500px;
           padding: 15px;
-          background-color: #b3d9ff;
+          background-color: white;
         }
 
         /* Estilo para os rótulos */

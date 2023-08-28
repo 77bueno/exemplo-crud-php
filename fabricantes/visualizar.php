@@ -15,12 +15,27 @@ $quantidade = count($listaDeFabricantes);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabricantes - Visualização</title>
     <style>
+        body {
+          background-color: #b3d9ff;
+        }
+
+        h1 a { color: white; }
+
+        h1 {
+          padding: 10px 20px;
+          background-color: #0056b3;
+          width: 405px;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+        }
+
         /* Estilos para a tabela */
         .styled-table {
             width: 40%; /* Largura da tabela */
             border-collapse: collapse;
             border: 1px solid #ddd;
-            background-color: #e6f7ff;
+            background-color: white;
         }
 
         /* Estilos para as células do cabeçalho */
@@ -28,7 +43,7 @@ $quantidade = count($listaDeFabricantes);
             padding: 6px; /* Reduzindo o preenchimento */
             font-size: 16px; /* Reduzindo o tamanho da fonte */
             text-align: left;
-            background-color: #b3d9ff;
+            background-color: white;
             border-bottom: 1px solid #ddd;
         }
 
@@ -56,6 +71,14 @@ $quantidade = count($listaDeFabricantes);
 
     <p><a href="inserir.php">Inserir novo fabricante</a></p>
 
+    <!-- Feedback/Mensagem para o usuário indicando que o processo deu certo. -->
+    <?php 
+    if (isset($_GET["status"]) && $_GET["status"] === "sucesso"){ ?>
+        <h2 style="color: blue">Fabricante atualizado com sucesso!</h2>
+    <?php
+    }
+    ?>
+
     <table  class="styled-table">
         <caption>Lista de Fabricantes <b><?=$quantidade?></b> </caption>
         <thead>
@@ -72,7 +95,7 @@ $quantidade = count($listaDeFabricantes);
             <tr>
                 <td><?=$fabricante['id']?></td>
                 <td><?=$fabricante['nome']?></td>
-                <td><a href="atualizar.php?id=<?=$fabricante['id']?>">Editar</a> <a href="">Excluir</a></td>
+                <td><a href="atualizar.php?id=<?=$fabricante['id']?>">Editar</a> <a href="excluir.php?id=<?=$fabricante['id']?>">Excluir</a></td>
             </tr>
         </tbody>
 <?php

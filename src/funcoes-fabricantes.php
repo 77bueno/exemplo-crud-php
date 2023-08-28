@@ -76,3 +76,16 @@ function atualizarFabricante(PDO $conexao, string $nome, int $id){
         die("Erro ao atualizar: ".$erro->getMessage());
     }
 } // fim do exercício 
+
+// Exercício: excluir fabricante
+function excluirFabricante(PDO $conexao, int $id){
+    $sql = "DELETE FROM fabricantes WHERE id = :id";
+
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindValue(":id", $id, PDO::PARAM_INT);
+        $consulta->execute();
+    } catch (Exception $erro) {
+        die("Erro ao excluir: ".$erro->getMessage());
+    }
+} // fim da função excluir

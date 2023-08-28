@@ -1,19 +1,13 @@
 <?php 
-// Importando as funções de fabicantes
 require_once "../src/funcoes-fabricantes.php";
 
-/* Obtendo e sanitizando o valor vindo do parâmetro de URL
-(link dinâmico) */
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
-/* Chamando a função e recuperando os dados de um fabricante
-    de acordo com o id passado */
 $fabricante = lerUmFabricante($conexao, $id);
 
-if (isset($_POST['atualizar'])) {
-    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
-    atualizarFabricante($conexao, $nome, $id);
-    header("location:visualizar.php?status=sucesso");
+if (isset($_POST['excluir'])) {
+    excluirFabricante($conexao, $id);
+    header("location:visualizar.php");
 }
 ?>
 <!DOCTYPE html>
@@ -21,16 +15,16 @@ if (isset($_POST['atualizar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricantes - Atualização</title>
+    <title>Fabricantes - Deletar</title>
     <style>
-      body {
+        body {
           background-color: #b3d9ff;
         }
 
         h1 {
           padding: 10px 20px;
           background-color: #0056b3;
-          width: 450px;
+          width: 315px;
           color: #fff;
           border: none;
           border-radius: 5px;
@@ -76,7 +70,7 @@ if (isset($_POST['atualizar'])) {
     </style>
 </head>
 <body>
-    <h1>Fabricantes | SELECT/UPDATE</h1>
+    <h1>Fabricantes | DELETE</h1>
     <hr>
     <form action="" method="post">
         <!-- Campo oculto usado apenas para registro no furmulário do id
@@ -86,12 +80,12 @@ if (isset($_POST['atualizar'])) {
             <label for="nome">Nome:</label>
             <input required value="<?=$fabricante['nome']?>" type="text" name="nome" id="nome">
         </p>
-        <button type="submit" name="atualizar">Atualizar fabricante</button>
+        <button type="submit" name="excluir">Excluir fabricante</button>
     </form>
 
     <hr>
 
-    <p><a href="visualizar.php">Voltar</a></p>
+    <p><a href="excluir.php">Voltar</a></p>
 
 </body>
 </html>
