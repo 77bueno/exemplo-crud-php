@@ -72,13 +72,15 @@ if (isset($_POST['excluir'])) {
 <body>
     <h1>Fabricantes | DELETE</h1>
     <hr>
+
+    <h2>Tem certeza que deseja excluir o fabricante abaixo?</h2>
     <form action="" method="post">
         <!-- Campo oculto usado apenas para registro no furmulário do id
         do fabricante que está sendo visualizado. -->
         <input type="hidden" name="id" value="<?=$fabricante['id']?>">
         <p>
             <label for="nome">Nome:</label>
-            <input required value="<?=$fabricante['nome']?>" type="text" name="nome" id="nome">
+            <input disabled required value="<?=$fabricante['nome']?>" type="text" name="nome" id="nome">
         </p>
         <button type="submit" name="excluir">Excluir fabricante</button>
     </form>
