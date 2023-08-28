@@ -85,7 +85,7 @@ if (isset($_POST['excluir'])) {
 
     <hr>
 
-    <p><a href="excluir.php">Voltar</a></p>
+    <p><a href="visualizar.php">Voltar</a></p>
 
 </body>
 </html>

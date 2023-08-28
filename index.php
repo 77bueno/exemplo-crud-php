@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Exercício</title>
     <style>
+        html { font-size: 18px; }
         body {
           background-color: #b3d9ff;
         }
@@ -12,7 +13,7 @@
         h1 {
           padding: 10px 20px;
           background-color: #0056b3;
-          width: 497px;
+          width: 560px;
           color: #fff;
           border: none;
           border-radius: 5px;
