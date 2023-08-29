@@ -21,6 +21,8 @@ $listaDeProdutos = lerProdutos($conexao);
             background-color: #b3d9ff;
         }
 
+        article { background-color: #DEDFE3; }
+
         .produtos {
             font-family: 'Segoe UI';
             display: flex;
@@ -36,12 +38,11 @@ $listaDeProdutos = lerProdutos($conexao);
             font-weight: bold;
             padding: 1rem;
             width: 49%;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
         }
 
-        .card-header {
-            background-color: lightsteelblue;
-        }
+        .card { border: none; }
+
     </style>
 </head>
 
