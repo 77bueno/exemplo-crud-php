@@ -5,7 +5,7 @@ require_once garante que a importação
 require_once "conecta.php";
 
 // Usada em fabricantes/visualizar.php   
-function lerFabricantes( PDO $conexao ){    
+function lerFabricantes( PDO $conexao ):array {    
     $sql = "SELECT * FROM fabricantes ORDER BY nome";
     
     try {
@@ -28,7 +28,7 @@ function lerFabricantes( PDO $conexao ){
 } // fim lerFabricantes
 
 // Usada em fabricantes/inserir.php
-function inserirFabricante( PDO $conexao, string $nomeDoFabricante ){
+function inserirFabricante( PDO $conexao, string $nomeDoFabricante ):void {
     /* :qualquercoisa -> isso indica um "named parameter"
     (parâmetro nomeado) */
     $sql = "INSERT INTO fabricantes(nome) VALUES(:nome)";
@@ -48,7 +48,7 @@ function inserirFabricante( PDO $conexao, string $nomeDoFabricante ){
 } // fim inserirFabricante
 
 // Usada em fabricante/atualizar.php
-function lerUmFabricante(PDO $conexao, int $idFabricante){
+function lerUmFabricante(PDO $conexao, int $idFabricante):array {
     $sql = "SELECT * FROM fabricantes WHERE id = :id";
 
     try {
@@ -64,7 +64,7 @@ function lerUmFabricante(PDO $conexao, int $idFabricante){
 } // fim lerUmFabricante
 
 // Exercício: IMPLEMENTE A FUNÇÃO ABAIXO
-function atualizarFabricante(PDO $conexao, string $nome, int $id){
+function atualizarFabricante(PDO $conexao, string $nome, int $id):void {
     $sql = "UPDATE fabricantes SET nome = :nome WHERE id = :id";
 
     try {
@@ -78,7 +78,7 @@ function atualizarFabricante(PDO $conexao, string $nome, int $id){
 } // fim do exercício 
 
 // Exercício: excluir fabricante
-function excluirFabricante(PDO $conexao, int $id){
+function excluirFabricante(PDO $conexao, int $id):void {
     $sql = "DELETE FROM fabricantes WHERE id = :id";
 
     try {
