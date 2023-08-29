@@ -50,12 +50,12 @@ $listaDeProdutos = lerProdutos($conexao);
 
     <div class="produtos">
         <?php foreach ( $listaDeProdutos as $produto ) { ?>
-    
+        
             <article class="produto">
                 <h3> <?=$produto["produto"]?> </h3>
                 <h4> <?=$produto["fabricante"]?> </h4>
                 <hr>
-                <p><b>Preço:</b> <?=formatarPreco($produto["preco"])?></p>
+                <p ><b>Preço:</b> <?=formatarPreco($produto["preco"])?></p>
                 <p><b>Quantidade:</b> <?=$produto["quantidade"]?></p>
                 <p><b>Total: </b> <?=calcularTotal($produto["preco"], $produto["quantidade"])?></p>
             </article>
