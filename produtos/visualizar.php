@@ -36,12 +36,14 @@ $listaDeProdutos = lerProdutos($conexao);
             width: 49%;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
+
+        hr { width: 30%; }
+        
     </style>
 </head>
 <body>
     <h1>Produtos | SELECT - <a href="../index.php">Home</a></h1>
 
-    <hr>
     <h2>Lendo e carregando todos os produtos.</h2>
 
     <p><a href="inserir.php">Inserir novo produto</a></p>
@@ -50,9 +52,12 @@ $listaDeProdutos = lerProdutos($conexao);
         <?php foreach ( $listaDeProdutos as $produto ) { ?>
     
             <article class="produto">
-                <h3> <?=$produto["nome"]?> </h3>
+                <h3> <?=$produto["produto"]?> </h3>
+                <h4> <?=$produto["fabricante"]?> </h4>
+                <hr>
                 <p><b>Preço:</b> <?=formatarPreco($produto["preco"])?></p>
                 <p><b>Quantidade:</b> <?=$produto["quantidade"]?></p>
+                <p><b>Total: </b> <?=calcularTotal($produto["preco"], $produto["quantidade"])?></p>
             </article>
         <?php } ?>
     </div>
