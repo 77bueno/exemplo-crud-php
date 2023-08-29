@@ -5,7 +5,7 @@ function formatarPreco(float $preco):string {
     return "R$ " . $precoFormatado;
 }
 
-function calcularTotal(float $valor, int $quantidade) {
+function calcularTotal(float $valor, int $quantidade):string {
     $total = $valor * $quantidade;
     return formatarPreco($total);
 }
