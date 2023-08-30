@@ -19,14 +19,15 @@ $listaDeProdutos = lerProdutos($conexao);
 
         body {
             background-color: #b3d9ff;
+            padding:35px;
         }
 
         article { background-color: #DEDFE3; }
 
         h1 {
-          padding: 10px 20px;
+          padding: 10px 25px;
           background-color: #0056b3;
-          width: 560px;
+          width: 530px;
           color: #fff;
           border: none;
           border-radius: 5px;
@@ -37,7 +38,7 @@ $listaDeProdutos = lerProdutos($conexao);
             font-family: 'Segoe UI';
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 15px;
             width: 80%;
             margin: auto;
         }

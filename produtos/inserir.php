@@ -34,7 +34,7 @@ if(isset($_POST['inserir'])){
 
     inserirProduto($conexao, $nome, $preco, $quantidade, $fabricanteId, $descricao);
 
-    header("location:visualizar.php")
+    header("location:visualizar.php");
 }
 ?>
 <!DOCTYPE html>
