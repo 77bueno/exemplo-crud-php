@@ -3,7 +3,6 @@ require_once "../src/funcoes-produtos.php";
 require_once "../src/funcoes-utilitarias.php";
 
 $listaDeProdutos = lerProdutos($conexao);
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -68,9 +67,9 @@ $listaDeProdutos = lerProdutos($conexao);
         <?php foreach ($listaDeProdutos as $produto) { ?>
 
             <article class="produto">
-            <div class="card">
+            <div  class="card text-center">
                 <div class="card-header">
-                    <h3> <?= $produto["produto"] ?> </h3>
+                    <h3  class="card-title"> <?= $produto["produto"] ?> </h3>
                     <h4> <?= $produto["fabricante"] ?> </h4>
                 </div>
                 <div class="card-body">
@@ -79,6 +78,12 @@ $listaDeProdutos = lerProdutos($conexao);
                         <p><b>Quantidade:</b> <?= $produto["quantidade"] ?></p>
                         <p><b>Total: </b> <?= calcularTotal($produto["preco"], $produto["quantidade"]) ?></p>
                     </blockquote>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>
+                        <a class="btn btn-primary" href="atualizar.php?id=<?=$produto['id']?>">Editar</a> | 
+                        <a class="btn btn-primary" href="excluir.php">Excluir</a>
+                    </p>
                 </div>
             </div>
             </article>
