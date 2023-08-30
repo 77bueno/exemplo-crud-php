@@ -23,6 +23,16 @@ $listaDeProdutos = lerProdutos($conexao);
 
         article { background-color: #DEDFE3; }
 
+        h1 {
+          padding: 10px 20px;
+          background-color: #0056b3;
+          width: 560px;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+        }
+        h1 a { color: white; }
+
         .produtos {
             font-family: 'Segoe UI';
             display: flex;
