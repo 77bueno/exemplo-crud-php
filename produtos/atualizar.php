@@ -1,9 +1,12 @@
 <?php 
 require_once "../src/funcoes-produtos.php";
+require_once "../src/funcoes-fabricantes.php";
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 $produto = lerUmProduto($conexao, $id);
+
+$fabricantes = lerFabricantes($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +37,10 @@ $produto = lerUmProduto($conexao, $id);
             <select name="fabricante" id="fabricante" required>
                 <option value=""></option>
                 <?php foreach ($fabricantes as $fabricante) { ?> 
-                    <option value="<?=$fabricante["id"]?>"><?=$fabricante["nome"]?></option>
+                    <option  <?php ?>
+                    value="<?=$fabricante["id"]?>">
+                        <?=$fabricante["nome"]?>
+                    </option>
                 <?php } ?>
             </select>
         </p>

@@ -77,6 +77,11 @@ $listaDeProdutos = lerProdutos($conexao);
                         <p><b>Preço:</b> <?= formatarPreco($produto["preco"]) ?></p>
                         <p><b>Quantidade:</b> <?= $produto["quantidade"] ?></p>
                         <p><b>Total: </b> <?= calcularTotal($produto["preco"], $produto["quantidade"]) ?></p>
+
+                        <?php if( !empty($produto["descricao"])){ ?>
+                        <p>Descrição: <?=$produto["descricao"]?></p>
+                        <?php } ?>
+
                     </blockquote>
                 </div>
                 <div class="card-footer text-muted">
