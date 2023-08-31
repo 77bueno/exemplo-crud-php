@@ -87,7 +87,7 @@ $listaDeProdutos = lerProdutos($conexao);
                 <div class="card-footer text-muted">
                     <p>
                         <a class="btn btn-primary" href="atualizar.php?id=<?=$produto['id']?>">Editar</a> | 
-                        <a class="btn btn-primary" href="excluir.php">Excluir</a>
+                        <a class="btn btn-primary" href="excluir.php?id=<?=$produto['id']?>">Excluir</a>
                     </p>
                 </div>
             </div>

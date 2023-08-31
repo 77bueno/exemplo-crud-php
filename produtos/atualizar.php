@@ -33,13 +33,23 @@ $fabricantes = lerFabricantes($conexao);
             <input type="number" min="1" max="100" name="quantidade" id="quantidade" required value="<?=$produto['quantidade']?>"> 
         </p>
         <p>
-            <label for="fabricante">Fabricante</label>
+        <label for="fabricante">Fabricante:</label>
             <select name="fabricante" id="fabricante" required>
                 <option value=""></option>
-                <?php foreach ($fabricantes as $fabricante) { ?> 
-                    <option  <?php ?>
-                    value="<?=$fabricante["id"]?>">
-                        <?=$fabricante["nome"]?>
+                
+                <?php foreach( $listaDeFabricantes as $fabricante ) { 
+                    /* Lógica/Algoritmo da seleção do fabricante
+                    Se a chave estrangeira for idêntica à chave primária, ou seja, se o id do fabricante do produto (coluna fabricante_id da tabela produtos)
+                    for igual ao id do fabricante (coluna id da tabela fabricantes), então coloque o atributo "selected" no
+                    <option> */
+                ?>        
+                    <option 
+                    <?php 
+                    // chave estrangeira  ===  chave primaria
+                    if($produto["fabricante_id"] === $fabricante["id"]) echo " selected ";
+                    ?>
+                    value="<?=$fabricante['id']?>">
+                        <?=$fabricante['nome']?>
                     </option>
                 <?php } ?>
             </select>
