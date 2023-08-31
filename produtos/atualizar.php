@@ -51,7 +51,7 @@ if (isset($_POST['atualizar'])) {
     <title>Produtos - Atualização</title>
 </head>
 <body>
-    <h1>Produtos | SELECT/UPDATE</h1>
+    <h1>Produtos | SELECT/UPDATE </h1>
     <hr>
 
     <form action="" method="post">

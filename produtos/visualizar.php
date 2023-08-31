@@ -18,7 +18,7 @@ $listaDeProdutos = lerProdutos($conexao);
 
         body {
             background-color: #b3d9ff;
-            padding:35px;
+            padding: 15px;
         }
 
         article { background-color: #DEDFE3; }
