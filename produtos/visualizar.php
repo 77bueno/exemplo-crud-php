@@ -88,7 +88,7 @@ $listaDeProdutos = lerProdutos($conexao);
                 <div class="card-footer text-muted">
                     <p>
                         <a class="btn btn-primary" href="atualizar.php?id=<?=$produto['id']?>">Editar</a> | 
-                        <a class="btn btn-primary" href="excluir.php?id=<?=$produto['id']?>">Excluir</a>
+                        <a class="btn btn-primary excluir" href="excluir.php?id=<?=$produto['id']?>">Excluir</a>
                     </p>
                 </div>
             </div>
@@ -99,5 +99,7 @@ $listaDeProdutos = lerProdutos($conexao);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <script src="../js/confirma-exclusao.js"></script>
 </body>
 </html>
