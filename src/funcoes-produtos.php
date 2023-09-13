@@ -62,7 +62,7 @@ function inserirProduto(
     }
 }
 
-function lerUmProduto(PDO $conexao, $id) {
+function lerUmProduto(PDO $conexao, $id):array {
     $sql = "SELECT * FROM produtos WHERE id = :id";
 
     try {
